@@ -11,7 +11,7 @@ $Level = $_POST['Level'];
 
 $insertLogin = "INSERT INTO useradmin values ('$IdUser','$Nama','$JenisKelamin','$Alamat','$NoTelp','$Username','$Password','$Level')";
 
-$insertLogin_query = mysql_query($insertLogin);
+$insertLogin_query = mysqli_query($connect,$insertLogin);
 
 if ($insertLogin_query)
 {

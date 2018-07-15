@@ -9,7 +9,7 @@ $TeleponPasien = $_POST['TeleponPasien'];
 
 $insertPasien = "INSERT INTO pasien values ('$KodePasien','$NamaPasien','$AlamatPasien','$GenderPasien','$UmurPasien','$TeleponPasien')";
 
-$insertPasien_query = mysql_query($insertPasien);
+$insertPasien_query = mysqli_query($connect,$insertPasien);
 
 if ($insertPasien_query)
 {

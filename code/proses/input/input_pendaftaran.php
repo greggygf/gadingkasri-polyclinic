@@ -8,7 +8,7 @@ $IdUser = $_SESSION['IdUser'];
 
 $insertPendaftaran = "INSERT INTO pendaftaran values ('$NoDaftar',now(),'$KodePasien','$KodeDokter','$IdUser')";
 
-$insertPendaftaran_query = mysql_query($insertPendaftaran);
+$insertPendaftaran_query = mysqli_query($connect,$insertPendaftaran);
 
 if ($insertPendaftaran_query)
 {

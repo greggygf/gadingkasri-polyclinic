@@ -9,7 +9,7 @@ $StokObat = $_POST['StokObat'];
 
 $insertObat = "INSERT INTO obat values ('$KodeObat','$NamaObat','$JenisObat','$Kategori','$HargaObat','$StokObat')";
 
-$insertObat_query = mysql_query($insertObat);
+$insertObat_query = mysqli_query($connect,$insertObat);
 
 if ($insertObat_query)
 {

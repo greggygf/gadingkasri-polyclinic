@@ -11,7 +11,7 @@ $Kembali = $Bayar-$TotalHarga;
 
 $insertResep = "INSERT INTO resep values ('$NomorResep','$TanggalTebus','$TotalHarga','$Bayar','$Kembali','$NoDaftar','$IdUser')";
 
-$insertResep_query = mysql_query($insertResep);
+$insertResep_query = mysqli_query($connect,$insertResep);
 
 if ($insertResep_query)
 {
