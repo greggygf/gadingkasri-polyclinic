@@ -10,7 +10,7 @@ $KodePoli = $_POST['KodePoli'];
 
 $insertDokter = "INSERT INTO dokter values ('$KodeDokter','$NamaDokter','$Spesialis','$AlamatDokter','$TeleponDokter','$Tarif','$KodePoli')";
 
-$insertDokter_query = mysql_query($insertDokter);
+$insertDokter_query = mysqli_query($connect,$insertDokter);
 
 if ($insertDokter_query)
 {
