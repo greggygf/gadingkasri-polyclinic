@@ -1,5 +1,5 @@
 <?php
-include "../../../koneksi.php";
+include "../../../../koneksi.php";
 $KodePoli = $_POST['KodePoli'];
 $NamaPoli = $_POST['NamaPoli'];
 
@@ -9,7 +9,7 @@ $updatePoli_query = mysqli_query($connect,$updatePoli);
 
 if ($updatePoli_query)
 {
-	header('location:../../../halaman_utama.php?tabel_poli=$tabel_poli');
+	header('location:../../../../halaman_utama.php?tabel_poli=$tabel_poli');
 }
 else
 {
