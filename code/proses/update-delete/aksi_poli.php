@@ -32,7 +32,7 @@ $query=mysqli_query($connect,"select * from poli where KodePoli='$KodePoli'");
 <br>
 <center><h2>Update Data Poli</h2></center><br><br><hr><br>
 
- <form action="update_poli.php" method="POST">
+ <form action="code/proses/update-delete/update/update_poli.php" method="POST">
         
     <table id="tabel-pendaftaran">
     <?php
