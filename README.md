@@ -5,9 +5,9 @@
 
   <h3 align="center">Gadingkasri Polyclinic</h3>
 
-  <p align="center">
-    PHP web-based polyclinic information system application
-  </p>
+> "Poliklinik Gadingkasri" Website Application is a Website that is used to store a lot of information. Information that can be stored is Poly data, Doctors, Patients, Medicines, Prescriptions, Registration, and Details. This application is expected to facilitate the work of Doctors / Admins in conducting data collection.
+
+> This application was created for the Vocational Competency Test for Vocational School - Software Engineering in 2016
 </p>
 
 <!-- TABLE OF CONTENTS -->
