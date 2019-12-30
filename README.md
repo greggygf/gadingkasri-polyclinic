@@ -41,6 +41,8 @@
 ```sh
 git clone https://github.com/bluohazard/gadingkasri-polyclinic.git
 ```
+![Git Clone](https://github.com/bluohazard/gadingkasri-polyclinic/blob/master/gif/clone.gif)
+
 2. Import Database `database/tebusobat.sql` to your PhpMyAdmin
 
 3. Edit file `koneksi.php` adjust to your database connection. Example : 
