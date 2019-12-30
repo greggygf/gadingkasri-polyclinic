@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 24, 2017 at 01:06 AM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- Host: localhost
+-- Generation Time: Dec 30, 2019 at 07:31 PM
+-- Server version: 10.1.40-MariaDB
+-- PHP Version: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -39,7 +41,7 @@ CREATE TABLE `detail` (
 --
 
 INSERT INTO `detail` (`NomorResep`, `KodeObat`, `Dosis`, `Jumlah`, `SubTotal`) VALUES
-(1, 'O-1', '2tsc', 2, '14000.00');
+(1, 'O-1', '2tsc', 3, '21000.00');
 
 --
 -- Triggers `detail`
@@ -96,10 +98,10 @@ CREATE TABLE `dokter` (
 --
 
 INSERT INTO `dokter` (`KodeDokter`, `NamaDokter`, `Spesialis`, `AlamatDokter`, `TeleponDokter`, `Tarif`, `KodePoli`) VALUES
-('DO-1', 'Nitis Weka Prakosa Adi', 'Gigi', 'Jl.Bandulan', '0879412312332', '100000.00', 'PO-1'),
-('DO-2', 'Muhammad Ridwan Bayu', 'Jantung', 'Jl.Puntadewa IV/25', '0875454564654', '700000.00', 'PO-2'),
-('DO-3', 'Ahmat Yuda F', 'Ginjal', 'Sumawe', '085645644456', '50000.00', 'PO-2'),
-('DO-4', 'Irfan', 'Usus', 'Jl.Ambarawa', '1321313231231', '150000.00', 'PO-2');
+('DO-1', 'Dokter Gigi', 'Gigi', 'Malang', '0000', '100000.00', 'PO-1'),
+('DO-2', 'Dokter Jantung', 'Jantung', 'Malang', '0000', '700000.00', 'PO-2'),
+('DO-3', 'Dokter Ginjal', 'Ginjal', 'Malang', '0000', '50000.00', 'PO-2'),
+('DO-4', 'Dokter Usus', 'Usus', 'Malang', '0000', '150000.00', 'PO-2');
 
 -- --------------------------------------------------------
 
@@ -159,11 +161,11 @@ CREATE TABLE `pasien` (
 --
 
 INSERT INTO `pasien` (`KodePasien`, `NamaPasien`, `AlamatPasien`, `GenderPasien`, `UmurPasien`, `TeleponPasien`) VALUES
-(1, 'Fani Amelia Sari', 'Batu', 'P', 17, '0855666322121'),
-(2, 'Robertus Wandha D.P', 'Jl.Simpang Kepuh', 'L', 17, '0866474747232'),
-(3, 'Tsasyah Hisyam S.P', 'Jl.Puntadewa 17D', 'L', 20, '0876484849567'),
-(4, 'Yahya', 'Jl.Bareng', 'L', 15, '0812938293323'),
-(5, 'Nitis Weka Prakosa Adi', 'Jl.Bandulan 12', 'L', 30, '0876979645645');
+(1, 'Pasien 1', 'Malang', 'P', 17, '0000'),
+(2, 'Pasien 2', 'Malang', 'L', 17, '0000'),
+(3, 'Pasien 3', 'Malang', 'L', 20, '0000'),
+(4, 'Pasien 4', 'Malang', 'L', 15, '0000'),
+(5, 'Pasien 5', 'Malang', 'L', 30, '0000');
 
 -- --------------------------------------------------------
 
@@ -240,7 +242,7 @@ CREATE TABLE `resep` (
 --
 
 INSERT INTO `resep` (`NomorResep`, `TanggalTebus`, `TotalHarga`, `Bayar`, `Kembali`, `NoDaftar`, `IdUser`) VALUES
-(1, '2017-02-23', '114000.00', '0.00', '-100000.00', 1, 'ID-1'),
+(1, '2017-02-23', '121000.00', '125000.00', '4000.00', 1, 'ID-1'),
 (2, '2017-02-23', '100000.00', '0.00', '0.00', 2, 'ID-1'),
 (3, '2017-02-23', '150000.00', '0.00', '0.00', 3, 'ID-1');
 
@@ -276,10 +278,9 @@ CREATE TABLE `useradmin` (
 --
 
 INSERT INTO `useradmin` (`IdUser`, `Nama`, `JenisKelamin`, `Alamat`, `NoTelp`, `Username`, `Password`, `Level`) VALUES
-('ID-1', 'Greggy Gianini Firmansyah', 'L', 'Jl.Gading 38 Malang', '087759659653', 'admin', 'admin', 'Superadmin'),
-('ID-2', 'Fani Amelia Sari', 'P', 'Batu', '0879797979797', 'fani', 'punk', 'Pasien'),
-('ID-3', 'Dokter Aji', 'L', 'Jl.Raya Langsep', '0877595654565', 'dokter', 'dokter', 'Dokter'),
-('ID-4', 'Chriesna Cahya Gumilang', 'L', 'Jl.Soehatt', '0877867686786', 'cisna', 'cisna', '');
+('ID-1', 'Greggy Gianini Firmansyah', 'L', 'Malang', '0000', 'admin', 'admin', 'Superadmin'),
+('ID-2', 'Pasien', 'P', 'Malang', '0000', 'pasien', 'pasien', 'Pasien'),
+('ID-3', 'Dokter', 'L', 'Malang', '0000', 'dokter', 'dokter', 'Dokter');
 
 --
 -- Indexes for dumped tables
@@ -349,6 +350,7 @@ ALTER TABLE `useradmin`
 --
 ALTER TABLE `resep`
   MODIFY `NomorResep` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- Constraints for dumped tables
 --
@@ -380,6 +382,7 @@ ALTER TABLE `pendaftaran`
 ALTER TABLE `resep`
   ADD CONSTRAINT `resep_ibfk_1` FOREIGN KEY (`NoDaftar`) REFERENCES `pendaftaran` (`NoDaftar`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `resep_ibfk_2` FOREIGN KEY (`IdUser`) REFERENCES `useradmin` (`IdUser`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
