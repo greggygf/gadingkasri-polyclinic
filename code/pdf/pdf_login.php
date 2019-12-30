@@ -1,12 +1,8 @@
 <?php
 
-require_once("koneksi.php");
+require_once("../../koneksi.php");
 
 $html = '
-<img src="logo/kop.png" width="500">
-
-<hr>
-
 <font face="Calibri">DATA LOGIN</font>
 
 <br><br>
@@ -29,8 +25,8 @@ $html = '
  <tbody>';
  // Tampilkan Data Dari Tabel
  $no=1;
- $sql = mysql_query("select * from useradmin");
- while ($data = mysql_fetch_array($sql)){  
+ $sql = mysqli_query($connect, "select * from useradmin");
+ while ($data = mysqli_fetch_array($connect,$sql)){  
   $html .= '<tr>';
   $html .= '<td>'.$data['IdUser'].'</td>';
   $html .= '<td>'.$data['Nama'].'</td>';
@@ -48,7 +44,7 @@ $html .= '</tbody></table>';
 $footer = '<div><div style="text-align:left; width:50; float:left;">'.$a.'</div>
            <div style="text-align:right; width:40; float:right;">{PAGENO}</div></div>          ';
 
-include("mpdf/mpdf.php");
+include("../../mpdf/mpdf.php");
 ob_clean();
 $mpdf = new mPDF('utf-8','A4','','Calibri'); 
 $mpdf->SetDisplayMode('fullpage');

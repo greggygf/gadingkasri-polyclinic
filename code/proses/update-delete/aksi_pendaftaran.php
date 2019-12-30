@@ -5,7 +5,7 @@ $NoDaftar = $_POST['NoDaftar'];
 
 $delete_pendaftaran = "DELETE from pendaftaran where NoDaftar='$NoDaftar'";
 
-	$delete_pendaftaran_query = mysql_query($delete_pendaftaran);
+	$delete_pendaftaran_query = mysqli_query($connect,$delete_pendaftaran);
 
 	if ($delete_pendaftaran_query)
 	{
@@ -15,3 +15,4 @@ $delete_pendaftaran = "DELETE from pendaftaran where NoDaftar='$NoDaftar'";
 	{
 		echo "Delete gagal dijalankan";
 	}
+?>
