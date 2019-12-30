@@ -24,11 +24,11 @@
 
 ### Login Page
 
-![Login Page](https://github.com/bluohazard/sisinfo-smknas-mlg/blob/master/img/login.png)
+![Login Page](https://github.com/bluohazard/gadingkasri-polyclinic/blob/master/img/login.png)
 
 ### Main Page
 
-![Main Page](https://github.com/bluohazard/sisinfo-smknas-mlg/blob/master/img/mainpage.png)
+![Main Page](https://github.com/bluohazard/gadingkasri-polyclinic/blob/master/img/mainpage.png)
 
 ### Built With
 * [PHP](https://www.php.net/)
