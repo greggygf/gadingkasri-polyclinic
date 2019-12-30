@@ -41,7 +41,9 @@
 ```sh
 git clone https://github.com/bluohazard/gadingkasri-polyclinic.git
 ```
-![Git Clone](https://github.com/bluohazard/gadingkasri-polyclinic/blob/master/gif/git-clone.gif)
+<p align="center">
+  <img src="gif/git-clone.gif" alt="Git Clone">
+</p>
 
 2. Import Database `database/tebusobat.sql` to your PhpMyAdmin
 
